@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheets/iframe.css">
+
+    <title>Inject iFrame into about:blank</title>
+</head>
+<body>
+    <button id="injectButton">Inject iFrame</button>
+
+    <script>
+        document.getElementById("injectButton").addEventListener("click", function() {
+            // Create a new window with about:blank
+            var newWindow = window.open('about:blank', '_blank');
+
+            // Check if the window was successfully created
+            if (newWindow) {
+                // Create a new iframe element
+                var iframe = document.createElement('iframe');
+
+                // Set the iframe's source (you can replace 'https://example.com' with your desired URL)
+                iframe.src = '/player.html';
+
+                // Set the iframe's width and height (adjust as needed)
+                //iframe.width = '800';
+               // iframe.height = '600';
+                iframe.width= '100%';
+                iframe.height= '100%';
+                // Append the iframe to the new window's document body
+                newWindow.document.body.appendChild(iframe);
+            } else {
+                // Handle cases where the new window could not be opened
+                console.error('Unable to open a new window with about:blank');
+            }
+        });
+    </script>
+</body>
+</html>
