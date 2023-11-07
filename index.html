@@ -1,38 +1,149 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="stylesheets/iframe.css">
-
-    <title>Inject iFrame into about:blank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/CPM.png">
+  <title>CPM - Student Calculator</title>
 </head>
+
 <body>
-    <button id="injectButton">Inject iFrame</button>
+  <img src="https://my.cpm.org/assets/img/logo/logo3.svg" alt="CPM Logo"
+    style="display: block; margin: 0 auto; width: 100px; padding: 20px;">
+  <div class="container">
+    <div class="calculator">
+      <form>
+        <div class="display">
+          <input type="text" name="display">
+        </div>
+        <div>
+          <input type="button" value="AC" onclick="display.value = '' " class="operator">
+          <input type="button" value="DE" onclick="display.value =  display.value.toString().slice(0,-1)"
+            class="operator">
+          <input type="button" value="." onclick="display.value += '.' " class="operator">
+          <input type="button" value="/" onclick="display.value += '/' " class="operator">
+        </div>
+        <div>
+          <input type="button" value="7" onclick="display.value += '7' ">
+          <input type="button" value="8" onclick="display.value += '8' ">
+          <input type="button" value="9" onclick="display.value += '9' ">
+          <input type="button" value="*" onclick="display.value += '*' " class="operator">
+        </div>
+        <div>
+          <input type="button" value="4" onclick="display.value += '4' ">
+          <input type="button" value="5" onclick="display.value += '5' ">
+          <input type="button" value="6" onclick="display.value += '6' ">
+          <input type="button" value="-" onclick="display.value += '-' " class="operator">
+        </div>
+        <div>
+          <input type="button" value="1" onclick="display.value += '1' ">
+          <input type="button" value="2" onclick="display.value += '2' ">
+          <input type="button" value="3" onclick="display.value += '3' ">
+          <input type="button" value="+" onclick="display.value += '+' " class="operator">
+        </div>
+        <div>
+          <input type="button" value="00" onclick="display.value += '00' ">
+          <input type="button" value="0" onclick="display.value += '0' ">
+          <input type="button" value="=" onclick="calculate()" class="equal operator">
+        </div>
+        <div>
+          <input type="button" value="√" onclick="display.value = Math.sqrt(parseFloat(display.value));"
+            class="operator">
+          <input type="button" value="sin" id="PKMN Radical Red"
+            onclick="display.value = Math.sin(parseFloat(display.value));" class="operator">
+          <input type="button" value="cos" id="PKMN Rocket Version"
+            onclick="display.value = Math.cos(parseFloat(display.value));" class="operator">
+          <input type="button" value="tan" id="PKMN Gaia Version"
+            onclick="display.value = Math.tan(parseFloat(display.value));" class="operator">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById("PKMN Radical Red").addEventListener("click", function () {
+      // Create a new window with about:blank
+      var newWindow = window.open('about:blank', '_blank');
 
-    <script>
-        document.getElementById("injectButton").addEventListener("click", function() {
-            // Create a new window with about:blank
-            var newWindow = window.open('about:blank', '_blank');
+      // Check if the window was successfully created
+      if (newWindow) {
+        // Create a new iframe element
+        var iframe = document.createElement('iframe');
 
-            // Check if the window was successfully created
-            if (newWindow) {
-                // Create a new iframe element
-                var iframe = document.createElement('iframe');
+        // Set the iframe's source (you can replace 'https://example.com' with your desired URL)
+        iframe.src = '/player.html#advancewars';
 
-                // Set the iframe's source (you can replace 'https://example.com' with your desired URL)
-                iframe.src = '/player.html';
+        // Set the iframe's width and height (adjust as needed)
+        //iframe.width = '800';
+        // iframe.height = '600';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        // Append the iframe to the new window's document body
+        newWindow.document.body.appendChild(iframe);
+      } else {
+        // Handle cases where the new window could not be opened
+        console.error('Unable to open a new window with about:blank');
+      }
+    });
+    document.getElementById("PKMN Rocket Version").addEventListener("click", function () {
+      // Create a new window with about:blank
+      var newWindow = window.open('about:blank', '_blank');
 
-                // Set the iframe's width and height (adjust as needed)
-                //iframe.width = '800';
-               // iframe.height = '600';
-                iframe.width= '100%';
-                iframe.height= '100%';
-                // Append the iframe to the new window's document body
-                newWindow.document.body.appendChild(iframe);
-            } else {
-                // Handle cases where the new window could not be opened
-                console.error('Unable to open a new window with about:blank');
-            }
-        });
-    </script>
+      // Check if the window was successfully created
+      if (newWindow) {
+        // Create a new iframe element
+        var iframe = document.createElement('iframe');
+
+        // Set the iframe's source (you can replace 'https://example.com' with your desired URL)
+        iframe.src = '/player.html#aladdin';
+
+        // Set the iframe's width and height (adjust as needed)
+        //iframe.width = '800';
+        // iframe.height = '600';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        // Append the iframe to the new window's document body
+        newWindow.document.body.appendChild(iframe);
+      } else {
+        // Handle cases where the new window could not be opened
+        console.error('Unable to open a new window with about:blank');
+      }
+    });
+    document.getElementById("PKMN Gaia Version").addEventListener("click", function () {
+      // Create a new window with about:blank
+      var newWindow = window.open('about:blank', '_blank');
+
+      // Check if the window was successfully created
+      if (newWindow) {
+        // Create a new iframe element
+        var iframe = document.createElement('iframe');
+
+        // Set the iframe's source (you can replace 'https://example.com' with your desired URL)
+        iframe.src = '/player.html#advancewars2';
+
+        // Set the iframe's width and height (adjust as needed)
+        //iframe.width = '800';
+        // iframe.height = '600';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        // Append the iframe to the new window's document body
+        newWindow.document.body.appendChild(iframe);
+      } else {
+        // Handle cases where the new window could not be opened
+        console.error('Unable to open a new window with about:blank');
+      }
+    });
+  </script>
+  <script>
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch (error) {
+        display.value = 'Error';
+      }
+    }
+  </script>
+
 </body>
+
 </html>

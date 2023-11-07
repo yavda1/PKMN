@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  
+  <link rel="stylesheet" href="stylesheets/iframe.css">
+  <link rel="icon" href="https://my.cpm.org/favicon.png">
+  <title>CPM - Learning Platform</title>
+</head>
+
+<body>
+  <button id="PKMN Radical Red">Radical Red</button>
+  <button id="PKMN Rocket Version">Rocket Version</button>
+  <button id="PKMN Gaia Version">Gaia Version</button>
+
+  <script>
+    document.getElementById("PKMN Radical Red").addEventListener("click", function () {
+      // Create a new window with about:blank
+      var newWindow = window.open('about:blank', '_blank');
+
+      // Check if the window was successfully created
+      if (newWindow) {
+        // Create a new iframe element
+        var iframe = document.createElement('iframe');
+
+        // Set the iframe's source (you can replace 'https://example.com' with your desired URL)
+        iframe.src = '/player.html#advancewars';
+
+        // Set the iframe's width and height (adjust as needed)
+        //iframe.width = '800';
+        // iframe.height = '600';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        // Append the iframe to the new window's document body
+        newWindow.document.body.appendChild(iframe);
+      } else {
+        // Handle cases where the new window could not be opened
+        console.error('Unable to open a new window with about:blank');
+      }
+    });
+    document.getElementById("PKMN Rocket Version").addEventListener("click", function () {
+      // Create a new window with about:blank
+      var newWindow = window.open('about:blank', '_blank');
+
+      // Check if the window was successfully created
+      if (newWindow) {
+        // Create a new iframe element
+        var iframe = document.createElement('iframe');
+
+        // Set the iframe's source (you can replace 'https://example.com' with your desired URL)
+        iframe.src = '/player.html#aladdin';
+
+        // Set the iframe's width and height (adjust as needed)
+        //iframe.width = '800';
+        // iframe.height = '600';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        // Append the iframe to the new window's document body
+        newWindow.document.body.appendChild(iframe);
+      } else {
+        // Handle cases where the new window could not be opened
+        console.error('Unable to open a new window with about:blank');
+      }
+    });
+    document.getElementById("PKMN Gaia Version").addEventListener("click", function () {
+      // Create a new window with about:blank
+      var newWindow = window.open('about:blank', '_blank');
+
+      // Check if the window was successfully created
+      if (newWindow) {
+        // Create a new iframe element
+        var iframe = document.createElement('iframe');
+
+        // Set the iframe's source (you can replace 'https://example.com' with your desired URL)
+        iframe.src = '/player.html#advancewars2';
+
+        // Set the iframe's width and height (adjust as needed)
+        //iframe.width = '800';
+        // iframe.height = '600';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        // Append the iframe to the new window's document body
+        newWindow.document.body.appendChild(iframe);
+      } else {
+        // Handle cases where the new window could not be opened
+        console.error('Unable to open a new window with about:blank');
+      }
+    });
+  </script>
+</body>
+
+</html>
